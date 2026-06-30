@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Visitor extends Model
 {
-    protected $fillable = ["qr_code"];
+    protected $fillable = ['full_name', 'passport_number', 'phone'];
+
+    public function visits() {
+        return $this->hasMany(Visit::class);
+    }
+
 }
