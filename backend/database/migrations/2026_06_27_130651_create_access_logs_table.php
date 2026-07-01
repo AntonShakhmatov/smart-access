@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('access_logs', function (Blueprint $table) {
             $table->id();
+            $table->string('code')->unique();
             $table->timestamps();
         });
     }

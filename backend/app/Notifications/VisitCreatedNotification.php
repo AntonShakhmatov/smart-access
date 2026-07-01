@@ -41,7 +41,7 @@ class VisitCreatedNotification extends Notification
         $cardCode = $this->visit->accessCard->code; // Номер карты (RFID)
 
         return (new MailMessage)
-            ->subject('You have a viitor')
+            ->subject('You have a visitor')
             ->line("Guest visiting you: **{$visitorName}**.")
             ->line("Access card issued №: **{$cardCode}**.")
             ->line("Time of registration: " . $this->visit->entered_at->format('H:i:s'));

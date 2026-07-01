@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('visits', function (Blueprint $table) {
             $table->id();
-            $table->visitor_id();
-            $table->qr_code()->unique();
-            $table->status();
-            $table->status();
-            $table->created_at();
+            $table->foreignId('visitor_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->index();
+            $table->foreignId('access_card_id')->unique(); 
+            $table->dateTime('entered_at');
+            $table->dateTime('exited_at')->nullable();
+            $table->string('status');
+            $table->timestamps();
         });
     }
 

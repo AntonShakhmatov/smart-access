@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class AccessCard extends Model
 {
-    //
+    protected $fillable = ['code'];
 }

@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('visitors', function (Blueprint $table) {
             $table->id();
-            $table->name();
-            $table->email();
+            $table->string('fullname');
+            $table->string('passport_number')->unique();
+            $table->string('phone')->unique();
+            $table->string('email')->unique();
             $table->timestamps();
         });
     }
